@@ -1,0 +1,5 @@
+print(type(11+10+40))
+print(type(1.2+ 1 + 0.2))
+print(type(True))
+print(type(False))
+print(type("Python"))
