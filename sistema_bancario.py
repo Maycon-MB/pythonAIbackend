@@ -60,7 +60,7 @@ def mostrar_extrato (saldo, /, *, extrato):
 
 def cadastrar_usuario (cliente):
     cpf = input("Informe o CPF (somente números): ")
-    usuario = filtrar_usuario(cpf, cliente)
+    usuario = filtrar_usuario(cpf, cliente) # type: ignore
 
     if usuario:
         print("\n@@@ Já existe usuário com esse CPF: @@@")
@@ -76,7 +76,7 @@ def cadastrar_usuario (cliente):
 
 def cadastrar_conta(agencia, numero_conta, usuarios):
     cpf = input("Informe o CPF do usuário: ")
-    usuario = filtrar_usuario(cpf, usuarios)
+    usuario = filtrar_usuario(cpf, usuarios) # type: ignore
 
     if usuario:
         print("\n Conta criada com sucesso!")
@@ -140,6 +140,5 @@ def main():
 
         else:
             print("Operação inválida, por favor selecione novamente a operação desejada.")
-
 
 main()
