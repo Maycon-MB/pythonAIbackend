@@ -7,6 +7,9 @@ class Veiculo:
     def ligar_motor(self):
         print("Ligando o motor")
 
+    def __str__(self):
+        return f"{self.__class__.__name__}: {', '.join([f'{chave} = {valor}' for chave, valor in self.__dict__.items()])}"
+
 class Motocicleta(Veiculo):
     pass
 
@@ -14,18 +17,18 @@ class Carro(Veiculo):
     pass
 
 class Caminhao(Veiculo):
-    def __init__(self, carregado):
+    def __init__(self, carregado, cor, placa, num_rodas):
+        super().__init__(cor, placa, num_rodas)
         self.carregado = carregado
+        
     
     def esta_carregado(self):
         print(f"{'Sim' if self.carregado else 'Não'} estou carregado")
 
 moto = Motocicleta("Preta", "XYZ-0987", 2)
-moto.ligar_motor()
-
 carro = Carro("Vinho", "ABC-1234", 4)
-carro.ligar_motor()
-
 caminhao = Caminhao("Azul", "QWE-4567", 6)
-caminhao.ligar_motor()
-caminhao.esta_carregado()
+
+print(carro)
+print(moto)
+print(caminhao)
